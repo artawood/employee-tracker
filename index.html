@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,14 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
 
     <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
 
     <!-- Custom CSS-->
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="css/custom.css" /> -->
 </head>
+
 <body>
     <div class="container">
         <div class="jumbotron text-center">
@@ -27,7 +31,7 @@
                 <h2>Add Employee</h2>
             </div>
             <div class="card-body">
-                
+
                 <form>
                     <div class="form-group">
                         <label for="Employee Name">Employee Name</label>
@@ -45,8 +49,9 @@
                         <label for="Monthly Rate">Monthly Rate</label>
                         <input type="text" class="form-control" id="monthly-rate" placeholder="$2000000">
                     </div>
-                    <button class="submit btn btn-primary mb-2"></i>Submit</button>
-                </form>	
+                    <button class="submit btn btn-primary mb-2">
+                        </i>Submit</button>
+                </form>
             </div>
         </div>
         <div class="card">
@@ -58,12 +63,49 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Bootstrap Jquery 
     ===================================================================================-->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <script type="text/javascript" src="assets/js/scrapper.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAU9HHS7xrbJNJsllrS-HFOnmP33jOu3YU",
+            authDomain: "fir-class2-c0ae3.firebaseapp.com",
+            databaseURL: "https://fir-class2-c0ae3.firebaseio.com",
+            projectId: "fir-class2-c0ae3",
+            storageBucket: "fir-class2-c0ae3.appspot.com",
+            messagingSenderId: "498835854111"
+        };
+        firebase.initializeApp(config);
+        // Create a variable to reference the database.
+        var database = firebase.database();
+
+
+        $(".submit").on("click", function () {
+            // Initial Values
+            var name = $("#employee-name").val().trim(); //employee-name
+            var role = $("#role").val().trim();; //role
+            var startDate = $("#start-date").val().trim();; //start date
+            var monthlyRate = $("#monthly-rate").val().trim(); // monthly-rate
+
+            
+
+        });
+
+
+
+
+
+    </script>
 </body>
+
 </html>
