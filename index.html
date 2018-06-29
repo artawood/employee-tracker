@@ -142,10 +142,12 @@
             var employeeName = $("<td>").text(childSnapshot.val().name);
             var role = $("<td>").text(childSnapshot.val().role);
             var start = $("<td>").text(childSnapshot.val().startDate);
+            var months = $("<td>").text("");
             var rate = $("<td>").text(childSnapshot.val().monthlyRate);
-            var added = $("<td>").text(childSnapshot.val().dateAdded);
+            // var added = $("<td>").text(childSnapshot.val().dateAdded);
+            var totalBilled = $("<td>").text("");
 
-            row.append(employeeName, role, start, rate, added);
+            row.append(employeeName, role, start, months, rate, totalBilled);
 
             table.append(row)
             console.log()
