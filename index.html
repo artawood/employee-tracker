@@ -88,16 +88,19 @@
         firebase.initializeApp(config);
         // Create a variable to reference the database.
         var database = firebase.database();
-
+        var name;
+        var role;
+        var startDate;
+        var monthlyRate;
 
         $(".submit").on("click", function (event) {
 
             event.preventDefault();
             // Initial Values
-            var name = $("#employee-name").val().trim(); //employee-name
-            var role = $("#role").val().trim();; //role
-            var startDate = $("#start-date").val().trim();; //start date
-            var monthlyRate = $("#monthly-rate").val().trim(); // monthly-rate
+            name = $("#employee-name").val().trim(); //employee-name
+            role = $("#role").val().trim();; //role
+            startDate = $("#start-date").val().trim();; //start date
+            monthlyRate = $("#monthly-rate").val().trim(); // monthly-rate
 
             // Code for handling the push
             database.ref().push({
@@ -108,9 +111,9 @@
                 dateAdded: firebase.database.ServerValue.TIMESTAMP
             });
 
-
-
         });
+
+
 
 
 
