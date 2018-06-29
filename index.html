@@ -124,7 +124,6 @@
 
         });
 
-
         database.ref().on("child_added", function (childSnapshot) {
 
         },
@@ -139,8 +138,6 @@
             var row = $("<tr>");
             var td = $("<td>");
 
-            
-                alert("childadded");
 
             var employeeName = $("<td>").text(childSnapshot.val().name);
             var role = $("<td>").text(childSnapshot.val().role);
@@ -152,8 +149,6 @@
 
             table.append(row)
             console.log()
-
-
         }),
 
             function (errorObject) {
