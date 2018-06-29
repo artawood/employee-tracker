@@ -59,7 +59,6 @@
                 <h3 class="card-title">Current Employee</h3>
             </div>
             <div class="card-body">
-                <div class="results"></div>
                 <table class="table">
                     <thead>
                         <tr>
@@ -70,7 +69,7 @@
                             <th scope="col"> Monthly Rate ($)</th>
                             <th scope="col">Total Billed ($)</th>
                         </tr>
-                    </thead> 
+                    </thead>
                 </table>
             </div>
         </div>
@@ -84,7 +83,7 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    <script type="text/javascript" src="assets/js/scrapper.js"></script>
+     <!-- <script type="text/javascript" src="assets/js/scrapper.js"></script> -->
 
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
     <script>
@@ -126,10 +125,41 @@
         });
 
 
+        database.ref().on("child_added", function (childSnapshot) {
+
+        },
+            function (errorObject) {
+                console.log("Errors handled: " + errorObject.code);
+            });
+
+        database.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function (childSnapshot) {
 
 
+            var table = $(".table");
+            var row = $("<tr>");
+            var td = $("<td>");
+
+            
+                alert("childadded");
+
+            var employeeName = $("<td>").text(childSnapshot.val().name);
+            var role = $("<td>").text(childSnapshot.val().role);
+            var start = $("<td>").text(childSnapshot.val().startDate);
+            var rate = $("<td>").text(childSnapshot.val().monthlyRate);
+            var added = $("<td>").text(childSnapshot.val().dateAdded);
+
+            row.append(employeeName, role, start, rate, added);
+
+            table.append(row)
+            console.log()
 
 
+        }),
+
+            function (errorObject) {
+                console.log("Errors handled: " + errorObject.code);
+
+            }
 
     </script>
 </body>
